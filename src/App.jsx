@@ -20,8 +20,8 @@ function App() {
         <SectionIntro />
         <SectionPortfolio />
         <Footer />
-        <SpeedInsights/>
-        <Analytics/>
+        <SpeedInsights />
+        <Analytics />
       </div>
     </>
   )
