@@ -4,33 +4,33 @@ import './Header.css'
 import LanguageSelector from './LanguageSelector';
 import { useTranslation } from 'react-i18next';
 
-function useTimecode() {
-  const [tc, setTc] = useState('00:00:00:00');
+// function useTimecode() {
+//   const [tc, setTc] = useState('00:00:00:00');
 
-  useEffect(() => {
-    const start = performance.now();
-    let raf;
-    const fps = 24;
+//   useEffect(() => {
+//     const start = performance.now();
+//     let raf;
+//     const fps = 24;
 
-    const tick = () => {
-      const elapsed = (performance.now() - start) / 1000;
-      const totalFrames = Math.floor(elapsed * fps);
-      const frames = totalFrames % fps;
-      const totalSeconds = Math.floor(totalFrames / fps);
-      const seconds = totalSeconds % 60;
-      const minutes = Math.floor(totalSeconds / 60) % 60;
-      const hours = Math.floor(totalSeconds / 3600);
-      const pad = (n) => String(n).padStart(2, '0');
-      setTc(`${pad(hours)}:${pad(minutes)}:${pad(seconds)}:${pad(frames)}`);
-      raf = requestAnimationFrame(tick);
-    };
+//     const tick = () => {
+//       const elapsed = (performance.now() - start) / 1000;
+//       const totalFrames = Math.floor(elapsed * fps);
+//       const frames = totalFrames % fps;
+//       const totalSeconds = Math.floor(totalFrames / fps);
+//       const seconds = totalSeconds % 60;
+//       const minutes = Math.floor(totalSeconds / 60) % 60;
+//       const hours = Math.floor(totalSeconds / 3600);
+//       const pad = (n) => String(n).padStart(2, '0');
+//       setTc(`${pad(hours)}:${pad(minutes)}:${pad(seconds)}:${pad(frames)}`);
+//       raf = requestAnimationFrame(tick);
+//     };
 
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
+//     raf = requestAnimationFrame(tick);
+//     return () => cancelAnimationFrame(raf);
+//   }, []);
 
-  return tc;
-}
+//   return tc;
+// }
 
 function Header() {
   const { t } = useTranslation();
