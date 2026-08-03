@@ -35,7 +35,7 @@ import { useTranslation } from 'react-i18next';
 function Header() {
   const { t } = useTranslation();
   const [isHidden, setIsHidden] = useState(false);
-  const timecode = useTimecode();
+  // const timecode = useTimecode();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,10 +56,10 @@ function Header() {
         <span className="brand-name i18n-text">{t('HeaderText')}</span>
       </a>
 
-      <div className="header-timecode" aria-hidden="true">
+       {/* <div className="header-timecode" aria-hidden="true">
         <span className="rec-dot" />
         <span className="timecode-value">{timecode}</span>
-      </div>
+      </div> */}
 
       <div className="header-right">
         <LanguageSelector />
