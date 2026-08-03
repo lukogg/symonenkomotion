@@ -3,6 +3,9 @@ import React from "react"
 import './App.css'
 import './sections/Sections.css'
 
+import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react"
+
 import Header from './components/Header.jsx'
 import SectionIntro from "./sections/SectionIntro.jsx"
 import Footer from "./components/Footer.jsx"
@@ -17,6 +20,8 @@ function App() {
         <SectionIntro />
         <SectionPortfolio />
         <Footer />
+        <SpeedInsights/>
+        <Analytics/>
       </div>
     </>
   )
