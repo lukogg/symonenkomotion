@@ -1,0 +1,131 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto 3rem;
+}
+
+.contentcard,
+.contentcard-promo,
+.contentcard-loop {
+  background-color: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  flex: 1 1 320px;
+  max-width: 360px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contentcard:hover,
+.contentcard-promo:hover,
+.contentcard-loop:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent-soft), 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #050506;
+  overflow: hidden;
+}
+
+.card-media video,
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.play-affordance {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(10, 11, 13, 0.45);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.95rem;
+  padding-left: 3px;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.play-affordance.is-hidden {
+  opacity: 0;
+}
+
+.sound-hint {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.65);
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.sound-hint.is-hidden {
+  opacity: 0;
+}
+
+.card-body {
+  padding: 1.1rem 1.25rem 1.35rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+}
+
+.card-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.card-button:hover {
+  border-color: var(--accent);
+}
+
+@media (max-width: 500px) {
+  .contentcard,
+  .contentcard-promo,
+  .contentcard-loop {
+    flex-basis: 100%;
+    max-width: 420px;
+  }
+}
